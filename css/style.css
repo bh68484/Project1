@@ -1,0 +1,58 @@
+body {
+	background: gray;
+}
+
+div.user-view {
+	height: 200px;
+}
+
+div#jailLogo {
+margin-left: 20px;
+}
+#nflTitle {
+	font-size: 30px;
+	font-style: bold;
+	text-align: center;
+}
+
+.container-1 {
+  width: 250px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#search {
+  width: 280px;
+  height: 50px;
+  background: #ffffff;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 35px;
+  outline:none !important;
+  background: #ffffff;
+  border-color: #dddddd;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  
+}
+
+.container-1 .icon {
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 15px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+  header, main, footer {
+      padding-left: 310px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
