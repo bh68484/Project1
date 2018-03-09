@@ -40,6 +40,14 @@ $("#add-player").on("click", function() {
     method: "GET"
   }).then(function(response) {
     console.log(response);
+    console.log("Name: " + response[0].Name);
+    console.log("Team: " + response[0].Team_preffered_name);
+    console.log("Year: " + response[0].Year);
+    console.log("Date: " + response[0].Date);
+    console.log("Category: " + response[0].Category);
+    console.log("Description: " + response[0].Description);
+    console.log("Outcome: " + response[0].Outcome);
+    $("#p").text(response[0].Name);
 
     // if they do (array has values), then...
     if (typeof response !== "undefined" && response.length > 0) {
@@ -88,7 +96,9 @@ $("#add-player").on("click", function() {
             console.log(response);
             mugshotImage.attr("src", mugshot);
             mugshotImage.attr("alt", "mugshot");
-            $("#mugshot").prepend(mugshotImage);
+            mugshotImage.attr("class", "card");
+            mugshotImage.attr("class", "col s12 m4");
+            $(".card-image").prepend(mugshotImage);
           })
           .fail(function() {
             alert("error");
@@ -104,6 +114,7 @@ $("#add-player").on("click", function() {
       console.log(playerName, "database push");
       // push the player's name to the database
       database.ref().push(playerName);
+      console.log("Push player name " + playerName);
     } else {
       // if they don't (array is empty), then...
 
@@ -116,4 +127,11 @@ $("#add-player").on("click", function() {
   $("#player-input").val("");
 });
 
-database.ref().on("child_added", function(snapshot) {});
+// Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+database.ref().on("child_added", function(snapshot) {
+  var newPlayerName = snapshot.val().playerName;
+  console.log(snapshot.val().playerName);
+
+  var snap = snapshot.val();
+  $("#information").append(snap.firstName);
+});
