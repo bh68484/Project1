@@ -29,7 +29,6 @@ $(document).ready(function () {
         }
     });
 
-<<<<<<< HEAD
     $("#player-input").val("");
 
 });
@@ -124,7 +123,6 @@ function callback(mugshotURL, response) {
                 database.ref().push(playerProfile);
                 console.log(playerProfile, "database push");
             };
-=======
     $("#add-player").on("click", function() {
 
         event.preventDefault();
@@ -155,34 +153,12 @@ function callback(mugshotURL, response) {
                 $('#modal1').modal('open');
                 console.log("Nothing returned");
             }
->>>>>>> 30c49afe7f37622a6d5ba38321dfa9c431ff9685
         });
 
         $("#player-input").val("");
 
     });
 
-<<<<<<< HEAD
-    // create a card with the player's mug shot and info from the NFL Arrests API
-    var snap = snapshot.val();
-    var elemRow = $("<div class=row>");
-
-    var playerCard = $("<div class='col s6'>"
-        + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
-        + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
-        + "<div class='card-content'>"
-        + "<span class='card-title activator grey-text text-darken-4 playerName'>"
-        + snap.name + "<i class='material-icons right'>more_vert</i>"
-        + "</span><p><a href='#' class='right deletePlayer'>Delete Player</a></p>"
-        + "</div><div class='card-reveal'>"
-        + "<span class='card-title grey-text text-darken-4'><span class='playerName'>" + snap.name + "</span>"
-        + "<i class='material-icons right'>close</i></span>"
-        + "<p class='playerInfo'> Team: " + snap.team + "<br> Charges: " + snap.crime
-        + "<br>Date: " + snap.date + "<br>Description: " + snap.description + "Total Arrests: " + snap.arrests + "</p>"
-        + "</div></div></div >");
-
-    $("#cardRow").append(playerCard);
-=======
     // In this sample, I'm trying to find the pages of my blog that Bing has indexed with the "site:" operator with the "q" parameter
     //For more info on the other querystring parameters refer to the documentation - https://bingapis.portal.azure-api.net/docs/services/56b43eeccf5ff8098cef3807/operations/56b4447dcf5ff8098cef380d
     // var mugshotAjax = $(function () {
@@ -283,7 +259,26 @@ function callback(mugshotURL, response) {
         // mugshotImage.attr("alt", "mugshot");
         // $("#mugshot").prepend(mugshotImage);
 
+        // create a card with the player's mug shot and info from the NFL Arrests API
+        var snap = snapshot.val();
+        var elemRow = $("<div class=row>");
+
+        var playerCard = $("<div class='col s6'>"
+            + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
+            + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
+            + "<div class='card-content'>"
+            + "<span class='card-title activator grey-text text-darken-4 playerName'>"
+            + snap.name + "<i class='material-icons right'>more_vert</i>"
+            + "</span><p><a href='#' class='right deletePlayer'>Delete Player</a></p>"
+            + "</div><div class='card-reveal'>"
+            + "<span class='card-title grey-text text-darken-4'><span class='playerName'>" + snap.name + "</span>"
+            + "<i class='material-icons right'>close</i></span>"
+            + "<p class='playerInfo'> Team: " + snap.team + "<br> Charges: " + snap.crime
+            + "<br>Date: " + snap.date + "<br>Description: " + snap.description + "Total Arrests: " + snap.arrests + "</p>"
+            + "</div></div></div >");
+
+        $("#cardRow").append(playerCard);
+
     });
->>>>>>> 30c49afe7f37622a6d5ba38321dfa9c431ff9685
 
 });
