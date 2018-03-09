@@ -160,11 +160,24 @@ $(document).ready(function () {
     database.ref().on("child_added", function (snapshot) {
 
         // create a card with the player's mug shot and info from the NFL Arrests API
-        // var mugshotImage = $("<img>");
-        // mugshotImage.attr("src", mugshot);
-        // mugshotImage.attr("alt", "mugshot");
-        // $("#mugshot").prepend(mugshotImage);
+        var snap = snapshot.val();
+        var elemRow = $("<div class=row>");
 
+        var playerCard = $("<div class='col s6'>"
+            + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
+            + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
+            + "<div class='card-content'>"
+            + "<span class='card-title activator grey-text text-darken-4 playerName'>"
+            + snap.name + "<i class='material-icons right'>more_vert</i>"
+            + "</span><p><a href='#' class='right deletePlayer'>Delete Player</a></p>"
+            + "</div><div class='card-reveal'>"
+            + "<span class='card-title grey-text text-darken-4'><span class='playerName'>" + snap.name + "</span>"
+            + "<i class='material-icons right'>close</i></span>"
+            + "<p class='playerInfo'> Team: " + snap.team + "<br> Charges: " + snap.crime
+            + "<br>Date: " + snap.date + "<br>Description: " + snap.description + "Total Arrests: " + snap.arrests + "</p>"
+            + "</div></div></div >");
+
+        $("#cardRow").append(playerCard);
     });
 
 });
