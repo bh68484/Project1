@@ -29,6 +29,7 @@ $(document).ready(function () {
         }
     });
 
+
     $("#player-input").val("");
 
 });
@@ -123,6 +124,7 @@ function callback(mugshotURL, response) {
                 database.ref().push(playerProfile);
                 console.log(playerProfile, "database push");
             };
+
     $("#add-player").on("click", function() {
 
         event.preventDefault();
