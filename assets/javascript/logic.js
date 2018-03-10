@@ -112,7 +112,8 @@ $(document).ready(function () {
             crime: response[0].Crime_category,
             description: response[0].Description,
             arrests: response.length,
-            mugshot: mugshotURL
+            mugshot: mugshotURL,
+            color: response[0].Team_hex_color
         };
 
         // check if the player is already in the database
