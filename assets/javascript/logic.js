@@ -21,6 +21,7 @@ $(document).ready(function () {
     // more info: http://mvark.blogspot.com/2016/06/how-to-use-bing-search-v5-api-with.html
     var total;
     var results = "";
+    var keys = [];
     //placeholder for bing query - will be changed to allow this to have data from a input form
 
     $("#player-input").keypress(function (e) {
@@ -116,7 +117,7 @@ $(document).ready(function () {
             description: response[0].Description,
             arrests: response.length,
             mugshot: mugshotURL,
-            teamColor: response[0].Team_hex_color
+            color: response[0].Team_hex_color
         };
 
         // check if the player is already in the database
@@ -183,5 +184,7 @@ $(document).ready(function () {
 
         $("#cardRow").append(playerCard);
     });
+
+    // Github Test
 
 });
