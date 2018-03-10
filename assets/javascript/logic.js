@@ -21,6 +21,7 @@ $(document).ready(function () {
     // more info: http://mvark.blogspot.com/2016/06/how-to-use-bing-search-v5-api-with.html
     var total;
     var results = "";
+    var keys = [];
     //placeholder for bing query - will be changed to allow this to have data from a input form
 
     $("#player-input").keypress(function (e) {
@@ -164,7 +165,7 @@ $(document).ready(function () {
         var snap = snapshot.val();
         var elemRow = $("<div class=row>");
 
-        var playerCard = $("<div class='col s4'>"
+        var playerCard = $("<div class='col s6'>"
             + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
             + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
             + "<div class='card-content'>"
