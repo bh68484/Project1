@@ -182,6 +182,7 @@ $(document).ready(function () {
         var elemRow = $("<div class=row>");
 
         var playerCard = $("<div class='col s6' id='" + key + "'>"
+
             + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
             + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
             + "<div class='card-content'>"
