@@ -1,36 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+    <title>Project 1</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NFL Slammer</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
 </head>
 
 <body>
 
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="player-input" type="text" class="validate">
-                    <label for="player-input">Player Name</label>
-                </div>
-            </div>
-        </form>
-        <button class="btn waves-effect waves-light" type="submit" id="add-player" name="action">
-            Add Player
-        </button>
-    </div>
-    
-    <div class="row" id="cardRow"> 
 
-    </div>
+  <ul id="slide-out" class="side-nav fixed">
+    <li><div class="user-view">
+      <div class="background" id="jailLogo">
+        <img src="assets/images/NFLjail.png">
+        <span class="black-text email" id="nflTitle">NFL Slammer</span>
+      </div>
+      <div></div>
+    </div><li><div class="divider"></div></li>
+    <div class="box">
+  <div class="container-1">
+      <span class="icon" id="add-player"><i class="fa fa-search"></i></span>
+      <input type="search" id="player-input" placeholder=" Search " />
+  </div>
+</div>
+</div><li><div class="divider"></div></li>
+    <li><a class="waves-effect" href="#!">About</a></li>
+    <li><a class="waves-effect" href="#!">News</a></li>
+    <li><a class="waves-effect" href="#!">Recent Arrest</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
-    <!-- Modal Structure -->
+<div class="container-fluid">
+<main>
+  <div class="row">
+    <div class="nflCards" id="cardRow"> 
+      
+  </div>  
+</div>
+</main>
+</div>
+
+<!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>We're Sorry!</h4>
@@ -51,11 +64,12 @@
         </div>
     </div>
 
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> -->
-    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script src='assets/javascript/logic.js'></script>
+
 </body>
 
 </html>

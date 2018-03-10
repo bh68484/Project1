@@ -164,7 +164,7 @@ $(document).ready(function () {
         var snap = snapshot.val();
         var elemRow = $("<div class=row>");
 
-        var playerCard = $("<div class='col s6'>"
+        var playerCard = $("<div class='col s4'>"
             + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
             + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
             + "<div class='card-content'>"

@@ -1,0 +1,95 @@
+body {
+	background: gray;
+}
+
+main {
+      padding-left: 350px;
+      margin-top: 20px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main {
+    padding-left: 0;
+  }
+}
+
+.user-view {
+	height: 250px;
+}
+
+#jailLogo {
+margin-left: 20px;
+margin-top: 20px;
+}
+
+#nflTitle {
+	font-size: 30px;
+	font-style: bold;
+	text-align: center;
+  margin-right: 10px;
+}
+
+.container-1 {
+  width: 250px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+#player-input {
+  width: 280px;
+  height: 50px;
+  background: #ffffff;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 35px;
+  outline:none !important;
+  background: #ffffff;
+  border-color: #dddddd;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 15px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+#add-player{
+  color: #000000;
+}
+
+#add-player:hover{
+  color: #0085CA;
+}
+
+.delete {
+  right: 12px;
+  top: 5px;
+  position: absolute;
+}
+
+.revealIcon {
+  right: 12px;
+  top: 5px;
+  position: absolute;
+}
+
+.card{
+  width: 320px;
+  height: 400px;
+}
+
+.mugshot {
+  height: 300px;
+}
+
+.modal {
+
+}
