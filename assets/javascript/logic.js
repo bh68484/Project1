@@ -30,6 +30,16 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on("click", ".deletePlayer", function () {
+        console.log("delete clicked");
+        event.preventDefault();
+
+        var key = $(this).attr("id");
+        console.log(key);
+        database.ref(key).remove();
+        $("#" + key).remove();
+    });
+
     $("#add-player").on("click", function() {
 
         event.preventDefault();
@@ -166,15 +176,18 @@ $(document).ready(function () {
 
         // create a card with the player's mug shot and info from the NFL Arrests API
         var snap = snapshot.val();
+        var key = snapshot.key;
+        console.log(snap);
+        console.log(key);
         var elemRow = $("<div class=row>");
 
-        var playerCard = $("<div class='col s6'>"
+        var playerCard = $("<div class='col s6' id='" + key + "'>"
             + "<div class='card'><div class='card-image waves-effect waves-block waves-light'>"
             + "<img class='activator mugshot' src='" + snap.mugshot + "'></div>"
             + "<div class='card-content'>"
             + "<span class='card-title activator grey-text text-darken-4 playerName'>"
             + snap.name + "<i class='material-icons right'>more_vert</i>"
-            + "</span><p><a href='#' class='right deletePlayer'>Delete Player</a></p>"
+            + "</span><p><a href='#' class='right deletePlayer' id='" + key + "'>Delete Player</a></p>"
             + "</div><div class='card-reveal'>"
             + "<span class='card-title grey-text text-darken-4'><span class='playerName'>" + snap.name + "</span>"
             + "<i class='material-icons right'>close</i></span>"
@@ -184,7 +197,5 @@ $(document).ready(function () {
 
         $("#cardRow").append(playerCard);
     });
-
-    // Github Test
 
 });
