@@ -105,6 +105,9 @@ $(document).ready(function () {
 
     function callback(mugshotURL, response) {
         // store name as an object
+
+        console.log(response);
+
         var playerProfile = {
             name: response[0].Name,
             team: response[0].Team_preffered_name,
@@ -112,7 +115,8 @@ $(document).ready(function () {
             crime: response[0].Crime_category,
             description: response[0].Description,
             arrests: response.length,
-            mugshot: mugshotURL
+            mugshot: mugshotURL,
+            teamColor: response[0].Team_hex_color
         };
 
         // check if the player is already in the database
