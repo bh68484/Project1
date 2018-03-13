@@ -13,6 +13,8 @@ firebase.initializeApp(config);
 $(document).ready(function() {
   $(".modal").modal();
 
+  $("#modal3").modal("open");
+
   var database = firebase.database();
   var firstEntry = false;
   var match = false;
@@ -24,6 +26,10 @@ $(document).ready(function() {
   var results = "";
   var keys = [];
   //placeholder for bing query - will be changed to allow this to have data from a input form
+
+  $("#about").on("click", function(){
+    $("#modal3").modal("open");
+  });
 
   $("#player-input").keypress(function(e) {
     if (e.which == 13) {
