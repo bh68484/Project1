@@ -180,7 +180,6 @@ $(document).ready(function() {
     var key = snapshot.key;
     console.log(snap);
     console.log(key);
-    var elemRow = $("<div class=row>");
 
     var playerCard = $(
       "<div class='col s6' id='" +
@@ -202,15 +201,15 @@ $(document).ready(function() {
         snap.name +
         "</span>" +
         "<i class='material-icons right'>close</i></span>" +
-        "<p class='playerInfo'> Team: " +
+        "<p class='playerInfo'> <b>Team:</b> " +
         snap.team +
-        "<br> Charges: " +
+        "<br> <b>Charges:</b> " +
         snap.crime +
-        "<br>Date: " +
-        snap.Date +
-        "<br>Description: " +
+        "<br><b>Date:</b> " +
+        snap.date +
+        "<br><b>Description:</b> " +
         snap.description +
-        "Total Arrests: " +
+        "<br><b>Total Arrests:</b> " +
         snap.arrests +
         "</p>" +
         "</div></div></div >"
