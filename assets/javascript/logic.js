@@ -16,7 +16,7 @@ $(document).ready(function () {
     var database = firebase.database();
     var firstEntry = false;
     var match = false;
-    var nflURL = "http://nflarrest.com/api/v1/player/arrests/"
+    var nflURL = "https://nflarrest.com/api/v1/player/arrests/"
     var nextMugshot = 0;
     // more info: http://mvark.blogspot.com/2016/06/how-to-use-bing-search-v5-api-with.html
     var total;
