@@ -75,12 +75,6 @@ margin-top: 20px;
   position: absolute;
 }
 
-.revealIcon {
-  right: 12px;
-  top: 5px;
-  position: absolute;
-}
-
 .card{
   width: 320px;
   height: 400px;
@@ -88,8 +82,4 @@ margin-top: 20px;
 
 .mugshot {
   height: 300px;
-}
-
-.modal {
-
 }
