@@ -13,6 +13,8 @@ firebase.initializeApp(config);
 $(document).ready(function() {
   $(".modal").modal();
 
+  $("#modal3").modal("open");
+
   var database = firebase.database();
   var firstEntry = false;
   var match = false;
@@ -25,10 +27,15 @@ $(document).ready(function() {
   var keys = [];
   //placeholder for bing query - will be changed to allow this to have data from a input form
 
+  $("#about").on("click", function(){
+    $("#modal3").modal("open");
+  });
+
   $("#player-input").keypress(function(e) {
     if (e.which == 13) {
       $("#add-player").click();
     }
+
   });
 
   $(document).on("click", ".deletePlayer", function() {
@@ -179,7 +186,6 @@ $(document).ready(function() {
     var key = snapshot.key;
     console.log(snap);
     console.log(key);
-    var elemRow = $("<div class=row>");
 
     var playerCard = $(
       "<div class='col s6' id='" +
@@ -201,15 +207,15 @@ $(document).ready(function() {
         snap.name +
         "</span>" +
         "<i class='material-icons right'>close</i></span>" +
-        "<p class='playerInfo'> Team: " +
+        "<p class='playerInfo'> <b>Team:</b> " +
         snap.team +
-        "<br> Charges: " +
+        "<br> <b>Charges:</b> " +
         snap.crime +
-        "<br>Date: " +
-        snap.Date +
-        "<br>Description: " +
+        "<br><b>Date:</b> " +
+        snap.date +
+        "<br><b>Description:</b> " +
         snap.description +
-        "Total Arrests: " +
+        "<br><b>Total Arrests:</b> " +
         snap.arrests +
         "</p>" +
         "</div></div></div >"
