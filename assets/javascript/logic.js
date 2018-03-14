@@ -14,7 +14,7 @@ $(document).ready(function() {
   $(".modal").modal();
 
   $("#modal3").modal("open");
-
+  var cardCount = 0;
   var database = firebase.database();
   var firstEntry = false;
   var match = false;
@@ -27,7 +27,7 @@ $(document).ready(function() {
   var keys = [];
   //placeholder for bing query - will be changed to allow this to have data from a input form
 
-  $("#about").on("click", function(){
+  $("#about").on("click", function() {
     $("#modal3").modal("open");
   });
 
@@ -35,7 +35,6 @@ $(document).ready(function() {
     if (e.which == 13) {
       $("#add-player").click();
     }
-
   });
 
   $(document).on("click", ".deletePlayer", function() {
@@ -133,7 +132,8 @@ $(document).ready(function() {
       date: response[0].Date,
       arrests: response.length,
       mugshot: mugshotURL,
-      color: response[0].Team_hex_color
+      mainColor: "#" + response[0].Team_hex_color,
+      altColor: "#" + response[0].Team_hex_alt_color
     };
 
     // check if the player is already in the database
@@ -186,7 +186,6 @@ $(document).ready(function() {
     var key = snapshot.key;
     console.log(snap);
     console.log(key);
-
     var playerCard = $(
       "<div class='col s6' id='" +
         key +
@@ -202,7 +201,9 @@ $(document).ready(function() {
         "</span><p><a href='#' class='right deletePlayer' id='" +
         key +
         "'>Delete Player</a></p>" +
-        "</div><div class='card-reveal'>" +
+        "</div><div class='card-reveal' id='card" +
+        cardCount +
+        "'>" +
         "<span class='card-title grey-text text-darken-4'><span class='playerName'>" +
         snap.name +
         "</span>" +
@@ -222,5 +223,15 @@ $(document).ready(function() {
     );
 
     $("#cardRow").append(playerCard);
+    $("#card" + cardCount).css({
+      background:
+        "-webkit-radial-gradient(left," +
+        snap.altColor +
+        ", " +
+        snap.mainColor +
+        ")"
+    });
+    cardCount++;
+    console.log(cardCount);
   });
 });
