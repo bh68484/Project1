@@ -103,7 +103,7 @@ $(document).ready(function() {
         // Request headers
         xhrObj.setRequestHeader(
           "Ocp-Apim-Subscription-Key",
-          "891ceab86439449c8b073cab352dd806"
+          "bfcd6ff95cb643a4b124d40d317a5b80"
         );
       },
       type: "GET"
@@ -225,7 +225,7 @@ $(document).ready(function() {
     $("#cardRow").append(playerCard);
     $("#card" + cardCount).css({
       background:
-        "-webkit-radial-gradient(left," +
+        "-webkit-radial-gradient(30% 30%, circle closest-corner," +
         snap.altColor +
         ", " +
         snap.mainColor +
